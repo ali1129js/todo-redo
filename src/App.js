@@ -2,10 +2,10 @@
  * @Author: Ali
  * @Date:   2018-10-26T11:54:42+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-11-15T06:33:57+01:00
+ * @Last modified time: 2018-11-16T17:04:22+01:00
  */
-import React, { Component } from 'react';
-import Form from './Components/Form';
+import React, { Component } from 'react'
+import Form from './Components/Form'
 
 class App extends Component {
 
