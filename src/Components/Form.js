@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2018-11-12T06:40:05+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-11-19T07:09:23+01:00
+ * @Last modified time: 2018-11-23T11:04:39+01:00
  */
 import React, { Component } from 'react'
 
@@ -40,7 +40,6 @@ render(){
           ref={this.inputRef} />
         <button type='submit'>Add Task</button>
       </form>
-      {this.newTask}
     </div>
   )
 }
