@@ -2,12 +2,11 @@
  * @Author: Ali
  * @Date:   2018-10-26T11:54:42+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-12-14T08:03:40+01:00
+ * @Last modified time: 2018-12-14T11:12:08+01:00
  */
 import React, { Component } from 'react'
 import Form from './Components/Form'
 import TodoList from './Components/TodoList'
-import TodoItems from './Components/TodoItems'
 class App extends Component {
   constructor(){
     super()
