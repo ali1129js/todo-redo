@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2018-10-26T11:54:42+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-12-11T09:07:37+01:00
+ * @Last modified time: 2018-12-14T07:51:18+01:00
  */
 import React, { Component } from 'react'
 import Form from './Components/Form'
@@ -24,13 +24,15 @@ class App extends Component {
       }
        ]
     }
+    this.formSubmitted = this.formSubmitted.bind(this)
+    this.newTodoChanged = this.newTodoChanged.bind(this)
   }
   formSubmitted(e){
     e.preventDefault()
-    console.log(this.state.newTodo)
     //instead of using [].push() -we make a copy of todos and we use the spread operator.
     //then we define the new todo we want to add
     this.setState({
+      newTodo: '',
       todos: [...this.state.todos,
         {
         title:this.state.newTodo,
@@ -84,13 +86,11 @@ class App extends Component {
       return (
         <div>
           {this.state.message}
-          <form onSubmit={this.formSubmitted.bind(this)}>
-            <input
-              type="text"
-              onChange={(e) => this.newTodoChanged(e)}
-            />
-            <button type="submit"> Add Todo </button>
-          </form>
+            <Form
+             newTodo={this.state.newTodo}
+             formSubmitted={this.formSubmitted}
+             newTodoChanged={this.newTodoChanged}
+           />
           <button onClick={() => this.allDone()}> All Done </button>
           <ul>
             {this.state.todos.map((todo, index) => {
