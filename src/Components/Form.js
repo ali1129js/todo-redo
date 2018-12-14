@@ -2,7 +2,7 @@
  * @Author: Ali
  * @Date:   2018-11-12T06:40:05+01:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-12-14T07:53:22+01:00
+ * @Last modified time: 2018-12-14T08:07:49+01:00
  */
 import React from 'react'
 
@@ -19,5 +19,4 @@ const Form = props => {
     </form>
   )
 }
-
 export default Form

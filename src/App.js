@@ -2,10 +2,11 @@
  * @Author: Ali
  * @Date:   2018-10-26T11:54:42+02:00
  * @Last modified by:   Ali
- * @Last modified time: 2018-12-14T07:51:18+01:00
+ * @Last modified time: 2018-12-14T08:03:40+01:00
  */
 import React, { Component } from 'react'
 import Form from './Components/Form'
+import TodoList from './Components/TodoList'
 import TodoItems from './Components/TodoItems'
 class App extends Component {
   constructor(){
@@ -26,6 +27,8 @@ class App extends Component {
     }
     this.formSubmitted = this.formSubmitted.bind(this)
     this.newTodoChanged = this.newTodoChanged.bind(this)
+    this.toggleTodoDone= this.toggleTodoDone.bind(this)
+    this.removeTodo = this.removeTodo.bind(this)
   }
   formSubmitted(e){
     e.preventDefault()
@@ -86,28 +89,17 @@ class App extends Component {
       return (
         <div>
           {this.state.message}
-            <Form
+          <Form
              newTodo={this.state.newTodo}
              formSubmitted={this.formSubmitted}
              newTodoChanged={this.newTodoChanged}
            />
           <button onClick={() => this.allDone()}> All Done </button>
-          <ul>
-            {this.state.todos.map((todo, index) => {
-              return (
-                <li key={todo.title}>
-                  <input type="checkbox" onChange={
-                    (e) => this.toggleTodoDone(e, index)}
-                    checked={todo.done}
-                  />
-                  <span style={{
-                    textDecoration: todo.done ? 'line-through' : 'inherit'
-                  }}>{todo.title}</span>
-                  <button onClick={() => this.removeTodo(index)}> Remove </button>
-                </li>
-              )
-            })}
-          </ul>
+          <TodoList
+            todos={this.state.todos}
+            toggleTodoDone={this.toggleTodoDone}
+            removeTodo={this.removeTodo}
+          />
         </div>
       )
   }
